@@ -1,0 +1,44 @@
+{
+  "id": "com.vergecoin.VERGE",
+  "branch": "stable",
+  "runtime": "org.kde.Platform",
+  "runtime-version": "5.9",
+  "sdk": "org.kde.Sdk",
+  "command": "VERGE-qt",
+  "cleanup": [
+    "/include"
+  ],
+  "finish-args": [
+    "--share=network",
+    "--filesystem=host",
+    "--socket=system-bus",
+    "--socket=session-bus",
+    "--socket=x11",
+    "--socket=wayland"
+  ],
+  "modules": [
+    {
+      "name": "verge",
+      "buildsystem": "autotools",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/vergecurrency/verge",
+          "tag": "4.0.1"
+        }
+      ],
+      "config-opts": [
+        "--with-boost=/app",
+        "--with-gui=qt5"
+      ],
+      "modules": [
+        "protobuf.json",
+        "qrencode.json",
+        "bdb.json",
+        "libevent.json",
+        "boost.json"
+      ]
+    }
+  ]
+}
+

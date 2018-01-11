@@ -1,0 +1,21 @@
+{
+  "name": "boost",
+  "disabled": false,
+  "buildsystem": "autotools",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://dl.bintray.com/boostorg/release/1.65.0/source/boost_1_65_0.tar.bz2",
+      "sha256": "ea26712742e2fb079c2a566a31f3266973b76e38222b9f88b387e3c8b2f9902c"
+    },
+    {
+      "type": "file",
+      "path": "boost-configure",
+      "dest-filename": "configure"
+    }
+  ],
+  "cleanup": [
+    "lib/debug"
+  ]
+}
+

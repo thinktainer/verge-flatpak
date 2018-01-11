@@ -1,0 +1,13 @@
+{
+  "name": "protobuf",
+  "disabled": false,
+  "buildsystem": "autotools",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.bz2",
+      "sha256": "ee445612d544d885ae240ffbcbf9267faa9f593b7b101f21d58beceb92661910"
+    } 
+  ]
+}
+

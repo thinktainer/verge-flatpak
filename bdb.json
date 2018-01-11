@@ -1,0 +1,23 @@
+{
+  "name": "bdb",
+  "disabled": false,
+  "buildsystem": "simple",
+  "subdir": "build_unix",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz",
+      "sha256": "12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef"
+    },
+    {
+      "type": "patch",
+      "path": "./bdb-0.patch"
+    }
+  ],
+  "build-commands": [
+    "../dist/configure --disable-shared --enable-cxx --disable-replication --with-pic --prefix=/app",
+    "make libdb_cxx-4.8.a libdb-4.8.a",
+    "make install_lib install_include"
+  ]
+}
+

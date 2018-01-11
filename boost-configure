@@ -1,0 +1,12 @@
+#!/bin/sh
+
+./bootstrap.sh "$@"
+
+cat <<EOF > "Makefile"
+LIB_TARGETS = --with-chrono --with-filesystem --with-program_options --with-system --with-thread --with-test
+all:
+	./b2 -j `nproc --ignore=1` \$(LIB_TARGETS)
+install:
+	./b2 install \$(LIB_TARGETS)
+EOF
+

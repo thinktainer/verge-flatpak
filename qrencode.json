@@ -1,0 +1,13 @@
+{
+  "name": "qrencode",
+  "disabled": false,
+  "buildsystem": "autotools",
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://fukuchi.org/works/qrencode/qrencode-3.4.4.tar.bz2",
+      "sha256": "efe5188b1ddbcbf98763b819b146be6a90481aac30cfc8d858ab78a19cde1fa5"
+    }
+  ]
+}
+
