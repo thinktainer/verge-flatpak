@@ -24,13 +24,20 @@
         {
           "type": "git",
           "url": "https://github.com/vergecurrency/verge",
-          "tag": "4.0.1"
+          "branch": "master"
         }
       ],
       "config-opts": [
         "--with-boost=/app",
         "--with-gui=qt5"
       ],
+      "post-install": [
+        "mkdir /app/share/applications",
+        "sed s/Icon=.*verge80.xpm/Icon=com.vergecoin.VERGE/ contrib/debian/VERGE-qt.desktop > /app/share/applications/com.vergecoin.VERGE.desktop",
+        "sed -i s/Exec=.*/Exec=VERGE-qt/ /app/share/applications/com.vergecoin.VERGE.desktop",
+        "for i in 32 80; do install -Dm644 share/pixmaps/verge${i}.xpm /app/share/icons/hicolor/${i}x${i}/apps/com.vergecoin.VERGE; done"
+      ],
+
       "modules": [
         "protobuf.json",
         "qrencode.json",
